@@ -1,3 +1,6 @@
-h1{
-    color: aquamarine;
+.customContainer {
+    background: #d892f3;
+    max-width: 50rem;
+    border:  2px solid rgb(120, 74, 228); 
+    border-radius: 0.5rem;
 }

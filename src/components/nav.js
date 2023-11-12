@@ -1,50 +1,51 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Navbar(){
     return (
         <div>
-  <nav class="navbar navbar-expand-lg  customnavbar">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="index.html">
-        <img  src={process.env.PUBLIC_URL + '/plane.png'} alt="plane" width="30" height="24" class="d-inline-block align-text-top me-1"/>
+  <nav className="navbar navbar-expand-lg  customnavbar">
+    <div className="container-fluid">
+      <Link className="navbar-brand" to="/">
+        <img  src={process.env.PUBLIC_URL + '/plane.png'} alt="plane" width="30" height="24" className="d-inline-block align-text-top me-1"/>
           AAA Flights
 
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+      </Link>
+      <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
         aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+        <span className="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-          <li class="nav-item  mx-2">
-            <a class="nav-link nav-link-underline" aria-current="page" href="booking.js">Booking</a>
+      <div className="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li className="nav-item  mx-2">
+            <Link className="nav-link nav-link-underline" aria-current="page" to="/booking">Booking</Link>
           </li>
-          <li class="nav-item px-2">
-            <a class="nav-link nav-link-underline" href="#">Contact</a>
+          <li className="nav-item px-2">
+            <Link className="nav-link nav-link-underline" to="#">Contact</Link>
           </li>
-          <li class="nav-item px-2">
-            <a class="nav-link nav-link-underline" href="flights.html">Flights</a>
+          <li className="nav-item px-2">
+            <Link className="nav-link nav-link-underline" to="flights.html">Flights</Link>
           </li>
 
 
         </ul>
       </div>
-      <div class="dropstart">
-        <ul class="navbar-nav">
-          <li class="nav-item dropdown  ">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+      <div className="dropstart">
+        <ul className="navbar-nav">
+          <li className="nav-item dropdown  ">
+            <Link className="nav-link dropdown-toggle" to="#" role="button" data-bs-toggle="dropdown"
               aria-expanded="false">
           <img src={process.env.PUBLIC_URL + '/user.png'} alt="User" width="30" height="24" 
-                class="d-inline-block align-text-top me-1"/>
-            </a>
-            <ul class="dropdown-menu ">
-              <li><a class="dropdown-item" href="login.html">Login</a></li>
-              <li><a class="dropdown-item" href="createaccount.html">Create Account</a></li>
+                className="d-inline-block align-text-top me-1"/>
+            </Link>
+            <ul className="dropdown-menu ">
+              <li><Link className="dropdown-item" to="login.html">Login</Link></li>
+              <li><Link className="dropdown-item" to="createaccount.html">Create Account</Link></li>
               <li>
-                <hr class="dropdown-divider"/>
+                <hr className="dropdown-divider"/>
               </li>
-              <li><a class="dropdown-item" href="admin.html">Login as Admin</a></li>
+              <li><Link className="dropdown-item" to="admin.html">Login as Admin</Link></li>
             </ul>
           </li>
 
