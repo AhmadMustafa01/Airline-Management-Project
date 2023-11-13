@@ -40,12 +40,12 @@ function Navbar(){
                 className="d-inline-block align-text-top me-1"/>
             </Link>
             <ul className="dropdown-menu ">
-              <li><Link className="dropdown-item" to="login.html">Login</Link></li>
-              <li><Link className="dropdown-item" to="createaccount.html">Create Account</Link></li>
+              <li><Link className="dropdown-item" to="/login">Login</Link></li>
+              <li><Link className="dropdown-item" to="/signup">Create Account</Link></li>
               <li>
                 <hr className="dropdown-divider"/>
               </li>
-              <li><Link className="dropdown-item" to="admin.html">Login as Admin</Link></li>
+              <li><Link className="dropdown-item" to="/loginadmin">Login as Admin</Link></li>
             </ul>
           </li>
 

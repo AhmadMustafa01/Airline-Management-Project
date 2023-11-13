@@ -3,7 +3,7 @@ import React from 'react'
 export default function Formbooking() {
     return (
         <div className="container customContainer mt-2 p-5 customContainer h-75 ">
-            <form className="row g-3" method="post" ac>
+            <form className="row g-3" method="post" action=''>
                 <div className="col-md-12">
                     <label for="inputState" className="form-label fs-4">From</label>
                     <select id="inputState" className="form-select">
