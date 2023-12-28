@@ -1,10 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+
 function Navbar(){
     return (
-        <div>
-  <nav className="navbar navbar-expand-lg  customnavbar">
+        <div >
+  <nav className="navbar navbar-expand-lg  navbar-dark bg-dark customnavbar" style={{height:"70px"}}>
     <div className="container-fluid">
       <Link className="navbar-brand" to="/">
         <img  src={process.env.PUBLIC_URL + '/plane.png'} alt="plane" width="30" height="24" className="d-inline-block align-text-top me-1"/>
@@ -18,11 +19,24 @@ function Navbar(){
       </button>
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
-          <li className="nav-item  mx-2">
-            <Link className="nav-link nav-link-underline" aria-current="page" to="/booking">Booking</Link>
-          </li>
+        <li className="nav-item">
+                    <Link className="nav-link nav-link-underline" to="/">Home</Link>
+                </li>
+        <li className="nav-item dropdown">
+          <a className="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+           Book
+          </a>
+          <ul className="dropdown-menu">
+            <li>
+            <Link className="dropdown-item " aria-current="page" to="/booking">Booking</Link>
+            </li>
+            <li><Link className="dropdown-item" href="#">Manage Bookings</Link></li>
+            <li><hr className="dropdown-divider"/></li>
+            <li><Link className="dropdown-item" to="#">My bookings</Link> </li>
+          </ul>
+        </li>
           <li className="nav-item px-2">
-            <Link className="nav-link nav-link-underline" to="#">Contact</Link>
+            <Link className="nav-link nav-link-underline" to="#">Contact Us</Link>
           </li>
           <li className="nav-item px-2">
             <Link className="nav-link nav-link-underline" to="flights.html">Flights</Link>

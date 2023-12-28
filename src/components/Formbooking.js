@@ -6,10 +6,6 @@ export default function Formbooking() {
             <form className="row g-3" method="post" action=''>
                 <div className="col-md-12">
                     <label for="inputState" className="form-label fs-4">From</label>
-                    <select id="inputState" className="form-select">
-                        <option selected>State</option>
-                        <option>...</option>
-                    </select>
                 </div>
                 <div className="col-md-12">
                     <select id="inputState" className="form-select">
