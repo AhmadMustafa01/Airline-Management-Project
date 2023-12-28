@@ -9,6 +9,8 @@ import Login from '../screens/login';
 import Createacc from '../screens/Createacc';
 import Loginadminscreen from '../screens/loginadminscreen';
 import Flight_ScheduleScreen from '../screens/Flight_ScheduleScreen';
+import Findflights from '../screens/Findflights';
+import NoResults from './Noresults';
 export default function
     App() {
     return (
@@ -21,6 +23,8 @@ export default function
                     <Route exact path="/signup" element={<Createacc />} />
                     <Route exact path="/loginadmin" element={<Loginadminscreen />} />
                     <Route exact path="/ScheduleScreen" element={<Flight_ScheduleScreen/>} />
+                    <Route path="/findflights" element={<Findflights />} />
+                    <Route path="/noresults" element={<NoResults />} />
                 </Routes>
 
             </div>

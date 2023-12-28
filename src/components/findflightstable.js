@@ -1,43 +1,40 @@
-import React from 'react'
+import React from 'react';
 
-export default function Findflightstable() {
+const FindflightsTable = ({ flights }) => {
   return (
-    <div>
-   <div class="container mt-5 customContainer">
-
-
-<table class="table">
-    <thead>
-    <tr>
-            <th scope="col">Flight #</th>
+    <div className="container mt-4">
+      <h2>Available Flights</h2>
+      <table className="table">
+        <thead>
+          <tr>
+            <th scope="col">Flight ID</th>
             <th scope="col">Origin</th>
             <th scope="col">Destination</th>
-            <th scope="col">Departure Time</th>
             <th scope="col">Day</th>
-            <th scope="col">Arrival Time</th>
+            {/* Add more columns based on your flight data */}
           </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <th scope="row"><img src={process.env.PUBLIC_URL + '/plane.png'} alt="" width="30" height="24"/>pk280</th>
-            <td>Lahore</td>
-            <td>Karachi</td>
-            <td>12pm</td>
-            <td>On time</td>
-            <td><button type="button" class="btn btn-outline-warning">Book</button></td>
-        </tr>
-        <tr>
-            <th scope="row"><img src={process.env.PUBLIC_URL + '/plane.png'} alt="" width="30" height="24"/>pk280</th>
-            <td>Lahore</td>
-            <td>Karachi</td>
-            <td>7pm</td>
-            <td>On time</td>
-            <td><a href="passdetails.html"><button type="button" class="btn btn-outline-warning">Book</button></a></td>
-        </tr>
-    </tbody>
-</table>
-
-</div>
+        </thead>
+        <tbody>
+          {/* Add a conditional check before mapping over flights */}
+          {flights && flights.length > 0 ? (
+            flights.map((flight) => (
+              <tr key={flight.id}>
+                <td>{flight.id}</td>
+                <td>{flight.origin}</td>
+                <td>{flight.destination}</td>
+                <td>{flight.day}</td>
+                {/* Add more columns based on your flight data */}
+              </tr>
+            ))
+          ) : (
+            <tr>
+              <td colSpan="4">No flights found</td>
+            </tr>
+          )}
+        </tbody>
+      </table>
     </div>
-  )
-}
+  );
+};
+
+export default FindflightsTable;
