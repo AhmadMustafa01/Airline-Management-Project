@@ -39,7 +39,7 @@ function Navbar(){
             <Link className="nav-link nav-link-underline" to="#">Contact Us</Link>
           </li>
           <li className="nav-item px-2">
-            <Link className="nav-link nav-link-underline" to="flights.html">Flights</Link>
+            <Link className="nav-link nav-link-underline" to="/ScheduleScreen">Flights</Link>
           </li>
 
 

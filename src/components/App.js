@@ -8,6 +8,7 @@ import Booking from '../screens/booking';
 import Login from '../screens/login';
 import Createacc from '../screens/Createacc';
 import Loginadminscreen from '../screens/loginadminscreen';
+import Flight_ScheduleScreen from '../screens/Flight_ScheduleScreen';
 export default function
     App() {
     return (
@@ -19,6 +20,7 @@ export default function
                     <Route exact path="/login" element={<Login />} />
                     <Route exact path="/signup" element={<Createacc />} />
                     <Route exact path="/loginadmin" element={<Loginadminscreen />} />
+                    <Route exact path="/ScheduleScreen" element={<Flight_ScheduleScreen/>} />
                 </Routes>
 
             </div>
