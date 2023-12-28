@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function Banner() {
   return (
@@ -6,7 +7,7 @@ export default function Banner() {
  <div class="jumbotron text-center">
         <h1>Welcome to AAA Airlines</h1>
         <p>Your gateway to amazing journeys!</p>
-        <a class="btn btn-primary" href="#">Book a Flight</a>
+        <Link class="btn btn-primary" to="/booking">Book a Flight</Link>
  </div>
 
 

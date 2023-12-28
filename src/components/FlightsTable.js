@@ -26,19 +26,24 @@ const FlightTable = () => {
             <th scope="col">Flight #</th>
             <th scope="col">Origin</th>
             <th scope="col">Destination</th>
-            <th scope="col">Time</th>
-            <th scope="col">Status</th>
+            <th scope="col">Day</th>
+            <th scope="col">Departure Time</th>
+           
+            <th scope="col">Arrival Time</th>
           </tr>
         </thead>
         <tbody>
           {flights.map((flight, index) => (
             <tr key={index}>
               <th scope="row">
-                <img src="plane.png" alt="" width="30" height="24" /> {flight.FlightId}
+                <img src="plane.png" alt="" width="30" height="24" /> {flight.flight_no}
               </th>
-              <td>{flight.Origin}</td>
-              <td>{flight.Destination}</td>
-              <td>{flight.Day}</td>
+              <td>{flight.origin}</td>
+              <td>{flight.destination}</td>
+              <td>{flight.day}</td>
+              <td>{flight.departure_time}</td>
+              <td>{flight.arrival_time}</td>
+             
              
             </tr>
           ))}

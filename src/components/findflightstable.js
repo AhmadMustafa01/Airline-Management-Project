@@ -8,15 +8,14 @@ export default function Findflightstable() {
 
 <table class="table">
     <thead>
-        <tr>
+    <tr>
             <th scope="col">Flight #</th>
             <th scope="col">Origin</th>
             <th scope="col">Destination</th>
-            <th scope="col">Time</th>
-            <th scope="col">Status</th>
-            <th scope="col">Booking</th>
-
-        </tr>
+            <th scope="col">Departure Time</th>
+            <th scope="col">Day</th>
+            <th scope="col">Arrival Time</th>
+          </tr>
     </thead>
     <tbody>
         <tr>
