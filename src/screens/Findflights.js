@@ -7,11 +7,13 @@ import { useLocation } from 'react-router-dom';
 
 export default function Findflights() {
     const location = useLocation();
-    const { formData, flights } = location.state || {};
+    const { formData, flights, selectedDate, selectedFlightClass } = location.state || {};
     return (
         <div>
             <Navbar />
-            {flights && <Findflightstable flights={flights} />}
+            {flights && <Findflightstable flights={flights}
+          selectedDate={selectedDate}
+          selectedFlightClass={selectedFlightClass} />}
         </div>
     )
 }

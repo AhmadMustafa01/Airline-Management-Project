@@ -12,6 +12,7 @@ const Formbooking = () => {
   const [from, setFrom] = useState('Lahore');
   const [to, setTo] = useState('Islamabad');
   const [dayOfWeek, setDayOfWeek] = useState('Wednesday');
+  const [flightClass, setFlightClass] = useState('Economy');
 
   const [foundFlights, setFoundFlights] = useState([]);
   const navigate = useNavigate();
@@ -26,6 +27,9 @@ const Formbooking = () => {
 
   const handlePassengerChange = (e) => {
     setPassengerCount(e.target.value);
+  };
+   const handleFlightClassChange = (e) => {
+    setFlightClass(e.target.value);
   };
 
   const handleFindFlights = async () => {
@@ -42,7 +46,11 @@ const Formbooking = () => {
       );
 
       if (response.data.length > 0) {
-        navigate('/findflights', { state: { formData, flights: response.data } });
+        navigate('/findflights', { state: {
+           formData, flights: response.data ,
+            selectedDate: startDate,
+            selectedFlightClass: flightClass,   
+          } });
       
       } else {
         navigate('/noresults');
@@ -131,14 +139,21 @@ const Formbooking = () => {
 
         <div className="row mt-2">
           <div className="col-md-6">
-            <label htmlFor="inputState" className="form-label fs-4">
-              Travel class
-            </label>
-            <select id="inputState" className="form-select">
-              <option selected>Economy</option>
-              <option>...</option>
-            </select>
-          </div>
+  <label htmlFor="inputState" className="form-label fs-4">
+    Travel class
+  </label>
+  <select
+    id="inputState"
+    className="form-select"
+    value={flightClass} // Set the value to the current flight class
+    onChange={handleFlightClassChange} // Call the handleFlightClassChange function on change
+  >
+    <option value="Economy">Economy</option>
+    <option value="Business">Business</option>
+    {/* Add more options if needed */}
+  </select>
+</div>
+
         </div>
 
         <label htmlFor="" className="form-label fs-4">
@@ -176,7 +191,7 @@ const Formbooking = () => {
             Find Flights
           </button>
         </div>
-        {foundFlights.length > 0 && <FindflightsTable flights={foundFlights} />}
+        {/* {foundFlights.length > 0 && <FindflightsTable flights={foundFlights} />} */}
       </form>
 
     </div>

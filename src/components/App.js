@@ -1,5 +1,4 @@
 import React from 'react'
-import Navbar from './nav'
 import Home from '../screens/home';
 import {
     BrowserRouter as Router, Routes, Route, useRouteMatch, useParams
@@ -11,6 +10,7 @@ import Loginadminscreen from '../screens/loginadminscreen';
 import Flight_ScheduleScreen from '../screens/Flight_ScheduleScreen';
 import Findflights from '../screens/Findflights';
 import NoResults from './Noresults';
+import PassDataEnter from '../screens/PassDataEnter';
 export default function
     App() {
     return (
@@ -25,6 +25,7 @@ export default function
                     <Route exact path="/ScheduleScreen" element={<Flight_ScheduleScreen/>} />
                     <Route path="/findflights" element={<Findflights />} />
                     <Route path="/noresults" element={<NoResults />} />
+                    <Route path="/passdetails" element={<PassDataEnter/>} />
                 </Routes>
 
             </div>
