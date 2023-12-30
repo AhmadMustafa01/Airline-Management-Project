@@ -33,11 +33,12 @@ const Changebookings = ({ location }) => {
   };
 
   const handleSubmit = async () => {
+    console.log(data.bookingReference);
     try {
       // Make an Axios POST request to UpdateBooking.php
       const response = await axios.post('http://localhost/dbmsProjectDatabases/UpdateBooking.php', {
         ticket_no: data.ticket_no,
-        bookingReference: data.bookingReference,
+        booking_reference: data.bookingReference,
         first_name: data.first_name,
         last_name: data.last_name,
         gender: data.gender,

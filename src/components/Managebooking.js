@@ -26,6 +26,7 @@ const Managebooking = () => {
       if (response.data.results.length === 0) {
         navigate('/noresults',);
       } else {
+        console.log(response.data.results);
         navigate('/changebooking', { state: { results: response.data.results } });
       }
     } catch (error) {
