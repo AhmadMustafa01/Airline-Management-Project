@@ -6,7 +6,7 @@ import { useLocation } from 'react-router-dom';
 
 export default function TicketScreen() {
   const location = useLocation();
-  const { bookingReference } = location.state || {};
+  const {bookingReference } = location.state || {};
   return (
     <div>
         <Navbar/>

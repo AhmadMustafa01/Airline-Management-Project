@@ -28,8 +28,41 @@ const Formbooking = () => {
   const handlePassengerChange = (e) => {
     setPassengerCount(e.target.value);
   };
-   const handleFlightClassChange = (e) => {
+  //  const handleFlightClassChange = (e) => {
+  //   setFlightClass(e.target.value);
+  // };
+
+
+  const handleFlightClassChange = (e) => {
     setFlightClass(e.target.value);
+  };
+  // const selectedFrom = e.target.value;
+  const citiesFromKarachiIslamabadLahore = ['Karachi', 'Islamabad', 'Lahore'];
+
+
+  let filteredToOptions = [];
+ 
+  const [updatedToOptions, setUpdatedToOptions] = useState([]);
+  const handleFromChange = (e) => {
+    const selectedFrom = e.target.value;
+    setFrom(selectedFrom);
+
+    // Adjust "TO" options based on the selected "From" city
+    // let updatedToOptions = [];
+    let toOptions = []
+   
+    if (selectedFrom === 'Lahore') {
+      toOptions = ['Islamabad', 'Karachi', 'Peshawar', 'Dubai', 'Jeddah'];
+    } else if (selectedFrom === 'Islamabad') {
+      toOptions = ['Lahore', 'Karachi', 'Peshawar', 'Dubai', 'Jeddah'];
+    } else if (selectedFrom === 'Karachi') {
+      toOptions = ['Lahore', 'Islamabad', 'Peshawar', 'Dubai', 'Jeddah'];
+    } else if (selectedFrom === 'Peshawar' || selectedFrom === 'Dubai' || selectedFrom === 'Jeddah') {
+      toOptions = ['Lahore', 'Islamabad', 'Karachi'];
+    }
+    console.log(updatedToOptions);
+    setUpdatedToOptions(toOptions);
+    setTo(toOptions[0]);; // Set default TO option
   };
 
   const handleFindFlights = async () => {
@@ -68,14 +101,18 @@ const Formbooking = () => {
           </label>
         </div>
         <div className="col-md-12">
-          <select
-            id="from"
-            className="form-select"
-            value={from}
-            onChange={(e) => setFrom(e.target.value)}
-          >
+        <select
+          id="from"
+          className="form-select"
+          value={from}
+          onChange={handleFromChange}
+        >
             <option>Lahore</option>
             <option>Islamabad</option>
+            <option>Karachi</option>
+            <option>Peshawar</option>
+            <option>Jeddah</option>
+            <option>Dubai</option>
           </select>
         </div>
 
@@ -89,9 +126,13 @@ const Formbooking = () => {
             value={to}
             onChange={(e) => setTo(e.target.value)}
           >
-            <option>Lahore</option>
-            <option>Islamabad</option>
+            {updatedToOptions.map((city) => (
+              <option key={city} value={city}>
+                {city}
+              </option>
+            ))}
           </select>
+
         </div>
 
         <div className="d-flex mt-4">

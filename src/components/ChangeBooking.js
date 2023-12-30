@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { useNavigate } from 'react-router-dom';
 
 const Changebookings = ({ location }) => {
   const [data, setData] = useState({
     ticket_no: "",
-    booking_reference: "",
+    bookingReference: "",
     first_name: "",
     last_name: "",
     gender: "",
@@ -18,7 +19,7 @@ const Changebookings = ({ location }) => {
       const result = location.state.results[0];
       setData({
         ticket_no: result.ticket_no,
-        booking_reference: result.booking_reference,
+        bookingReference: result.booking_reference,
         first_name: result.first_name,
         last_name: result.last_name,
         gender: result.gender,
@@ -26,7 +27,7 @@ const Changebookings = ({ location }) => {
       });
     }
   }, [location.state]);
-
+  const navigate = useNavigate();
   const handleChange = (field, value) => {
     setData((prevData) => ({ ...prevData, [field]: value }));
   };
@@ -36,7 +37,7 @@ const Changebookings = ({ location }) => {
       // Make an Axios POST request to UpdateBooking.php
       const response = await axios.post('http://localhost/dbmsProjectDatabases/UpdateBooking.php', {
         ticket_no: data.ticket_no,
-        booking_reference: data.booking_reference,
+        bookingReference: data.bookingReference,
         first_name: data.first_name,
         last_name: data.last_name,
         gender: data.gender,
@@ -47,6 +48,7 @@ const Changebookings = ({ location }) => {
       if (response.data.success) {
         // Show a success message (you can use a popup or any other method)
         alert('Successfully updated data entry!');
+        // navigate('/ticket', { state: data.bookingReference });
       } else {
         // Handle error or show an appropriate message
         alert('Failed to update data entry.');
@@ -76,7 +78,7 @@ const Changebookings = ({ location }) => {
         <tbody>
           <tr>
             <td>{data.ticket_no}</td>
-            <td>{data.booking_reference}</td>
+            <td>{data.bookingReference}</td>
             <td>
               <input
                 type="text"
