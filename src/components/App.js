@@ -11,6 +11,10 @@ import Flight_ScheduleScreen from '../screens/Flight_ScheduleScreen';
 import Findflights from '../screens/Findflights';
 import NoResults from './Noresults';
 import PassDataEnter from '../screens/PassDataEnter';
+import PaymentScreen from '../screens/PaymentScreen';
+import TicketScreen from '../screens/ticketScreen';
+import Managescreen from '../screens/Managescreen';
+import ChangeBookingscreen from '../screens/ChangeBookingscreen';
 export default function
     App() {
     return (
@@ -26,6 +30,10 @@ export default function
                     <Route path="/findflights" element={<Findflights />} />
                     <Route path="/noresults" element={<NoResults />} />
                     <Route path="/passdetails" element={<PassDataEnter/>} />
+                    <Route path="/payment" element={<PaymentScreen/>} />
+                    <Route path="/ticket" element={<TicketScreen/>} />
+                    <Route path="/manage" element={<Managescreen/>} />
+                    <Route path="/changebooking" element={<ChangeBookingscreen/>} />
                 </Routes>
 
             </div>

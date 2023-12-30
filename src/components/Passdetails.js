@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 export default function Passdetails({ bookingReference }) {
+    const navigate=useNavigate();
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -30,6 +31,8 @@ export default function Passdetails({ bookingReference }) {
       if (response.data.message === 'Data stored successfully') {
         // Handle success, e.g., redirect or show a success message
         alert('Data stored successfully!');
+        navigate('/payment',{ state: { bookingReference } });
+
       } else {
         // Handle failure
         alert('Failed to store data. Please try again.');

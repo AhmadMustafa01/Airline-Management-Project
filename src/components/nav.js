@@ -30,7 +30,7 @@ function Navbar(){
             <li>
             <Link className="dropdown-item " aria-current="page" to="/booking">Booking</Link>
             </li>
-            <li><Link className="dropdown-item" href="#">Manage Bookings</Link></li>
+            <li><Link className="dropdown-item" to="/manage">Manage Bookings</Link></li>
             <li><hr className="dropdown-divider"/></li>
             <li><Link className="dropdown-item" to="#">My bookings</Link> </li>
           </ul>

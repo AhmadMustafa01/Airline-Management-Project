@@ -76,6 +76,10 @@ body{
 /* Custom color scheme */
 body {
     background-color: #f3f5f9;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 .navbar {
@@ -159,3 +163,8 @@ body {
 }
 
 
+  
+  #root {
+    flex: 1;
+  }
+  
