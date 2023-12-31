@@ -49,7 +49,9 @@ const Changebookings = ({ location }) => {
       if (response.data.success) {
         // Show a success message (you can use a popup or any other method)
         alert('Successfully updated data entry!');
-        // navigate('/ticket', { state: data.bookingReference });
+        console.log(data.bookingReference);
+        navigate('/newticket', { state: { bookingReference: data.bookingReference } });
+
       } else {
         // Handle error or show an appropriate message
         alert('Failed to update data entry.');

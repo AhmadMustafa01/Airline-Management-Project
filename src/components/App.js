@@ -15,6 +15,7 @@ import PaymentScreen from '../screens/PaymentScreen';
 import TicketScreen from '../screens/ticketScreen';
 import Managescreen from '../screens/Managescreen';
 import ChangeBookingscreen from '../screens/ChangeBookingscreen';
+import NewticketScreen from '../screens/NewticketScreen';
 export default function
     App() {
     return (
@@ -34,6 +35,7 @@ export default function
                     <Route path="/ticket" element={<TicketScreen/>} />
                     <Route path="/manage" element={<Managescreen/>} />
                     <Route path="/changebooking" element={<ChangeBookingscreen/>} />
+                    <Route path="/newticket" element={<NewticketScreen/>} />
                 </Routes>
 
             </div>
